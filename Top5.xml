@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Top5.xsl"?>
+<series>
+ <diff_series>
+  <name>Breaking Bad</name>
+  <category>Drama</category>
+  <rating>9.5</rating>
+</diff_series>
+ <diff_series>
+  <name>Game of Thrones</name>
+  <category>Drama</category>
+  <rating>9.3</rating>
+</diff_series>
+ <diff_series>
+  <name>The Office</name>
+  <category>Comedy</category>
+  <rating>8.9</rating>
+</diff_series>
+ <diff_series>
+  <name>F.R.I.E.N.D.S.</name>
+  <category>Romance</category>
+  <rating>8.9</rating>
+</diff_series>
+ <diff_series>
+  <name>Narcos</name>
+  <category>Crime</category>
+  <rating>8.8</rating>
+</diff_series>
+</series>

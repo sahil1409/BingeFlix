@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+    <title>BingeFlix</title>
+    <link rel="icon" href="https://img.icons8.com/wired/64/000000/tv-show.png"/>
+    <link rel="stylesheet" href="CSS/MiniProjectStyle.css">
+    
+        <style>
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+}
+
+li {
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+
+/* Dropdown Button */
+.Categoriesbtn {
+  background-color: #333333;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  font-family: "Times New Roman"
+}
+
+/* The container div - needed to position the dropdown content */
+.Categories {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.Categories-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.Categories-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.Categories-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.Categories:hover .Categories-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.Categories:hover .Categoriesbtn {background-color: #111111;}
+        
+            }</style>
+   
+   <script>
+      function getWelcome(){
+           var x="";  
+         var ajaxRequest = new XMLHttpRequest();
+         ajaxRequest.onreadystatechange = function(){
+                     if(ajaxRequest.readyState == 4){
+               //the request is completed, now check its status
+               if(ajaxRequest.status == 200){
+                  //turn JSON into object
+                  var jsonObj = JSON.parse(ajaxRequest.responseText);
+                  //get array
+                   var rArray = jsonObj.info;
+                 
+                  
+                  for(var i=0; i<=rArray.length; i++){
+                  //use that object to set content and color
+                   x+="<h1 style='display:inline-block; color:pink'>Website Name : </h1><h2 style='display:inline-block; color:pink'>"+rArray[i].name+"</h2><br><h1 style='display:inline-block; color:pink'>Website Creators : </h1><h2 style='display:inline-block; color:pink'>"+rArray[i].creators+"</h2><br><h1 style='display:inline-block; color:pink'>Date of Establishment : </h1><h2 style='display:inline-block; color:pink'>"+ rArray[i].doe+"</h2><br><h1 style='display:inline-block; color:pink'>Overview of Website : </h1><h2 style='display:inline-block; color:pink'>"+rArray[i].overview+"</h2><br>";
+                  
+                  document.getElementById("welcome").innerHTML = x;
+                  }
+                  
+               }
+               else{
+                  console.log("Status error: " + ajaxRequest.status);
+               }
+            }
+            else{
+               console.log("Ignored readyState: " + ajaxRequest.readyState);
+            }
+         
+         
+         }
+         ajaxRequest.open('GET', 'AboutInfo.json');
+         ajaxRequest.send();
+      }
+            
+   </script>   
+</head>
+<body onload="getWelcome()" style="background-color: #fe4040;
+background-image: linear-gradient(90deg, #fe4040 0%, #70dcfa 100%);
+">
+    
+     <ul>
+      <li><a href="MiniProject.html" class="active">Home</a></li>
+      <li>
+          <div class="Categories">
+            <button class="Categoriesbtn">Categories</button>
+            <div class="Categories-content">
+                <a href="Action_and_Adventure.html">Action and Adventure</a>
+                <a href="Comedy.html">Comedy</a>
+                <a href="Drama.html">Drama</a>
+                <a href="Crime.html">Crime</a>
+                <a href="Romance.html">Romance</a>
+            </div>
+          </div>
+      </li>
+      <li><a href="Contacts.html">Contact</a></li>
+      <li><a href="About.html">About</a></li>
+    </ul>
+    
+   <h1 style="text-align: center; color: aliceblue; font-size: 3em; text-shadow: 2px 2px 30px red;">About Website</h1>
+
+   <div id="welcome"></div>
+ </body>  
+</html>

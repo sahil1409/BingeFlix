@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BingeFlix</title>
+    <link rel="icon" href="https://img.icons8.com/wired/64/000000/tv-show.png"/>
+    <link rel="stylesheet" href="CSS/CategoryOnClick.css">
+</head>
+<body style="
+             background: url(https://i.pinimg.com/originals/26/3f/bf/263fbfd7f9173d4a7d3412b234c7913c.jpg) no-repeat center center fixed; 
+             -webkit-background-size: cover;
+             -moz-background-size: cover;
+             -o-background-size: cover;
+             background-size: cover;">
+    <h1>  The Vampire Diaries</h1><img src="https://cdn.vox-cdn.com/thumbor/QuS2QKQys3HhosKiV-2IuKhphbo=/39x0:3111x2048/1400x1050/filters:focal(39x0:3111x2048):format(png)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png" style="width: 75px; height: 75px; position: absolute; left: 52%; top: 34px; margin-left:-150px; text-align: center;"><br><br><br><br><br><br>
+       <pre>
+            The Vampire Diaries is an American supernatural teen drama television series.
+            On her first day at high school, Elena meets Stefan and immediately feels a
+            connection with him. However, what she does not know is that Stefan and his
+            brother, Damon, are in fact vampires.
+            Starring            Ian Somerhalder, Nina Dobrev, Paul Wesley
+            Genres	        Romance, Drama
+            Audio languages	English
+       </pre><br><br><br><br><br><br><br><br><br>
+    <h2>IMDb 7.7</h2><br>
+    <label for="Trailer">Click here for the  </label>
+    <input type="button" id="Trailer" name="Trailer" value="Trailer" onclick="iframe()">
+    <div id="demo"></div>
+    <script type="text/javascript">
+        function iframe(){
+              document.getElementById("demo").innerHTML = "<iframe width=\"871\" height=\"490\" src=\"https://www.youtube.com/embed/BmVmhjjkN4E\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
+              document.body.style.background='black';
+        }
+    </script><br>
+        <label for="Season">Seasons Available : </label>
+    <select id="Season" name="Season">
+        <option value="Season 1">Season 1</option>
+        <option value="Season 2">Season 2</option>
+        <option value="Season 3">Season 3</option>
+        <option value="Season 4">Season 4</option>
+        <option value="Season 5">Season 5</option>
+        <option value="Season 6">Season 6</option>
+        <option value="Season 7">Season 7</option>
+        <option value="Season 8">Season 8</option>
+    </select>
+</body>
+</html>
